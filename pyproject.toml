@@ -1,0 +1,6 @@
+[project]
+name = "todo-app"
+version = "0.1.0"
+description = "A simple command-line TODO list manager"
+readme = "README.md"
+requires-python = ">=3.13"

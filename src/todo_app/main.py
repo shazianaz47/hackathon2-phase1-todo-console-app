@@ -1,20 +1,20 @@
 """Main entry point for the Todo App."""
 
-from src.todo_app.todo_manager import TodoManager
-from src.todo_app.cli import CLI
+from .todo_manager import TodoManager
+from .cli import CLI
 
 
 def main() -> None:
     """Run the main application loop."""
     print("Welcome to the Todo App!")
-    print("Available commands: add, list, update, delete, complete, quit")
-    
+    print("Available commands: add, list, update, delete, complete, quit, exit, q")
+
     todo_manager = TodoManager()
     cli = CLI(todo_manager)
-    
+
     while True:
         try:
-            command = input("\n> ").strip()
+            command = input("todo-app> ").strip()
             should_continue = cli.handle_command(command)
             if not should_continue:
                 break

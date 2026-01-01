@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: todo-app
+Version: 0.1.0
+Summary: A simple command-line TODO list manager
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# Todo App
+
+A simple command-line TODO list manager that stores tasks only in memory (no persistence).
+
+## Features
+
+- Add tasks with title and description
+- View all tasks with status indicators
+- Mark tasks as complete/incomplete
+- Update existing tasks
+- Delete tasks
+
+## Commands
+
+- `add` - Add a new task
+- `list` - View all tasks
+- `update` - Update a task by ID
+- `delete` - Delete a task by ID
+- `complete` - Toggle completion status of a task by ID
+- `quit` - Exit the application
+
+## Setup
+
+This project uses Python 3.13+ with no external dependencies.
+
+## Usage
+
+Run the application with:
+
+```bash
+python -m src.todo_app
+```

@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/todo_app/__init__.py
+src/todo_app/cli.py
+src/todo_app/main.py
+src/todo_app/task.py
+src/todo_app/todo_manager.py
+src/todo_app.egg-info/PKG-INFO
+src/todo_app.egg-info/SOURCES.txt
+src/todo_app.egg-info/dependency_links.txt
+src/todo_app.egg-info/top_level.txt

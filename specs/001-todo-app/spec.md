@@ -112,13 +112,18 @@ As a user, I want to delete tasks that I no longer need so that I can keep my ta
 - **FR-010**: System MUST support case-insensitive command matching (e.g., "ADD" and "add" both work)
 - **FR-011**: System MUST maintain unique and sequential IDs that are not reused after deletion
 - **FR-012**: System MUST provide a command-line interface with an interactive loop (REPL style)
+- **FR-013**: System MUST provide a clear command prompt (e.g., 'todo-app> ') to indicate users can enter commands
+- **FR-014**: System MUST allow users to exit the application using 'quit', 'exit', or 'q' commands
+- **FR-015**: System MUST validate that task titles are no longer than 255 characters and descriptions are no longer than 1000 characters
+- **FR-016**: System MUST display an error message when a non-numeric ID is provided for commands requiring a numeric task ID
+- **FR-017**: System MUST accept commands in any case (e.g., 'ADD', 'add', 'Add') and normalize them internally
 
 ### Key Entities *(include if feature involves data)*
 
 - **Task**: Represents a single TODO item with the following attributes:
   - ID: Unique auto-incrementing integer identifier (starting from 1)
-  - Title: Required string representing the task name
-  - Description: Optional string providing additional details about the task
+  - Title: Required string representing the task name (max 255 characters)
+  - Description: Optional string providing additional details about the task (max 1000 characters)
   - Completed: Boolean status indicating whether the task is completed (default: False)
 
 ## Success Criteria *(mandatory)*
@@ -130,3 +135,13 @@ As a user, I want to delete tasks that I no longer need so that I can keep my ta
 - **SC-003**: 95% of users successfully complete their first task management session without requiring help documentation
 - **SC-004**: System provides clear error messages for invalid inputs with 100% accuracy in identifying the specific error
 - **SC-005**: Application maintains responsive interaction with commands executing in under 1 second
+
+## Clarifications
+
+### Session 2026-01-01
+
+- Q: How should the command-line interface prompt users for input? → A: The application should provide a clear prompt like 'todo-app> ' to indicate users can enter commands
+- Q: How should users exit the application? → A: The application should exit cleanly when the user enters 'quit', 'exit', or 'q'
+- Q: How should the application handle very long titles or descriptions? → A: The application should accept titles up to 255 characters and descriptions up to 1000 characters, with appropriate validation messages for longer inputs
+- Q: How should the application handle non-numeric IDs when a numeric ID is expected? → A: The application should display an error message indicating that the ID must be a number when a non-numeric value is entered
+- Q: How should the application handle case-insensitive command matching? → A: The application should accept commands in any case (e.g., 'ADD', 'add', 'Add') and normalize them internally

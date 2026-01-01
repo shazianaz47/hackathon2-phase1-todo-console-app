@@ -106,6 +106,41 @@ src/
 - **Decision**: Validate at input time with clear error messages
 - **Rationale**: Better user experience with immediate feedback
 
+### 5. Command Prompt Format
+- **Option A**: Use 'todo-app> ' as the command prompt
+- **Option B**: Use '> ' as the command prompt
+- **Option C**: Use 'todo> ' as the command prompt
+- **Decision**: Use 'todo-app> ' as the command prompt
+- **Rationale**: Provides clear indication to users that they can enter commands
+
+### 6. Exit Commands
+- **Option A**: Only accept 'quit' to exit
+- **Option B**: Accept 'quit', 'exit', or 'q' to exit
+- **Option C**: Only accept 'exit' to exit
+- **Decision**: Accept 'quit', 'exit', or 'q' to exit
+- **Rationale**: Provides flexibility for users with multiple standard options
+
+### 7. Input Length Validation
+- **Option A**: No character limits on titles and descriptions
+- **Option B**: Limit titles to 255 characters and descriptions to 1000 characters
+- **Option C**: Limit titles to 100 characters and descriptions to 500 characters
+- **Decision**: Limit titles to 255 characters and descriptions to 1000 characters
+- **Rationale**: Provides reasonable limits that prevent potential UI issues while allowing sufficient space for content
+
+### 8. Non-Numeric ID Handling
+- **Option A**: Ignore invalid IDs without error messages
+- **Option B**: Display error message when non-numeric ID is provided
+- **Option C**: Ask user to re-enter command with valid ID
+- **Decision**: Display error message when non-numeric ID is provided
+- **Rationale**: Provides clear feedback to users about what went wrong
+
+### 9. Case Sensitivity for Commands
+- **Option A**: Commands are case-sensitive
+- **Option B**: Commands are case-insensitive and normalized internally
+- **Option C**: Only accept lowercase commands
+- **Decision**: Commands are case-insensitive and normalized internally
+- **Rationale**: Provides maximum flexibility for users while maintaining consistent internal processing
+
 ## Implementation Phases
 
 ### Phase 1: Project Setup & Basic Structure
@@ -120,28 +155,29 @@ src/
 2. Create TodoManager class with in-memory storage
 3. Implement basic add_task method
 4. Implement get_all_tasks method
-5. Write basic tests for Task and TodoManager
+5. Add validation for title length (max 255 chars) and description length (max 1000 chars)
+6. Write basic tests for Task and TodoManager
 
 ### Phase 3: CLI Command Parsing & Main Loop
 1. Implement CLI class with command parsing
-2. Create main loop with REPL-style interface
+2. Create main loop with REPL-style interface using 'todo-app> ' prompt
 3. Implement basic "list" and "add" commands
-4. Add quit/exit functionality
+4. Add quit/exit functionality supporting 'quit', 'exit', or 'q' commands
 5. Test basic functionality
 
 ### Phase 4: Implement Core Features
 1. Implement "complete" command to toggle task status
 2. Implement "update" command to modify task details
 3. Implement "delete" command to remove tasks
-4. Add comprehensive input validation
-5. Test each feature individually
+4. Add comprehensive input validation including non-numeric ID error handling
+5. Implement case-insensitive command matching
+6. Test each feature individually
 
 ### Phase 5: Polish UI, Error Handling & Final Demo Preparation
 1. Improve error messages and user feedback
 2. Add input validation for all commands
-3. Implement case-insensitive command matching
-4. Add confirmation for destructive operations
-5. Create demo script for hackathon judges
+3. Add confirmation for destructive operations
+4. Create demo script for hackathon judges
 
 ### Phase 6: Documentation & Repo Cleanup
 1. Update README.md with usage instructions
@@ -189,7 +225,7 @@ src/
 
 ### Demo Sequence for Hackathon Judges
 
-1. Start the application
+1. Start the application (shows 'todo-app> ' prompt)
 2. Show "list" command with empty list
 3. Add 2-3 sample tasks with titles and descriptions
 4. Show "list" command to display tasks
@@ -197,7 +233,7 @@ src/
 6. Update a task's details
 7. Delete a task
 8. Show final list to confirm changes
-9. Exit the application
+9. Exit the application using 'quit', 'exit', or 'q'
 
 ## Development Guidelines
 

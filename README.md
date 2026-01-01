@@ -28,5 +28,5 @@ This project uses Python 3.13+ with no external dependencies.
 Run the application with:
 
 ```bash
-python -m src.todo_app
+python -m src.todo_app.main
 ```
